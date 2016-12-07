@@ -1,5 +1,6 @@
 # Talk overview
 
-* Basic types in Elixir
-* How to write functions
-* How to use pattern matching
+* What is ExUnit?
+* Using ExUnit: Normal code
+* Using ExUnit: Running tetss
+* Using ExUnit: Testing processes
