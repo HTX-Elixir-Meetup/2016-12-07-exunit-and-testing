@@ -14,3 +14,5 @@ Finished in 0.02 seconds
 
 Randomized with seed 968362
 ```
+
+You can also use `--exclude` to run everything *but* a certain thing.
