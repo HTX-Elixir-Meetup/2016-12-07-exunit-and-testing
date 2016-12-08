@@ -1,14 +1,3 @@
-## Using ExUnit: Writing Tests
-
-ExUnit lets us test to see if certain values are returned or exceptions raised.
-
-```
-defmodule SimpleTest do  
-  def reverse_string(str) when is_bitstring(str) do
-    String.reverse str
-  end
-end
-
 defmodule SimpleTestTest do
   use ExUnit.Case
   doctest SimpleTest
@@ -20,8 +9,13 @@ defmodule SimpleTestTest do
 
   test "Should reverse only strings" do
     assert_raise FunctionClauseError, fn ->
-        SimpleTest.reverse_only_string( 1234 )
+        SimpleTest.reverse_string( 1234 )
       end
   end
+
+  test "Should send message to pid" do
+    SimpleTest.send_string( self, "hi")
+    assert_receive "hi"
+    refute_receive "ahhh"
+  end
 end
-````
